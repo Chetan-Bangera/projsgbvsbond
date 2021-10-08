@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Century Gothic;
+        }
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://wallpaperaccess.com/full/2927307.jpg");
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .logo img{
+            float: left;
+            width: 160px;
+            height: auto;
+            padding: 25px
+        }
+        .main {
+            max-width: 1435px;
+            margin: auto;
+        }
+        ul {
+            float: right;
+            list-style-type: none;
+            margin-top: 25px;
+        }
+
+        ul li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 20px;
+            border: 1px solid transparent;
+            transition: 0.6s ease;
+        }
+
+        ul li a:hover {
+            background-color: white;
+            color: #000;
+        }
+        .dropdown{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 5px solid white;
+            padding: 10px 30px;
+            color: white;
+            text-decoration: none;
+        }
+        input[type=button], input[type=submit]{
+            background-color: transparent ;
+            border: none solid transparent;
+            transition: 0.6s ease;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+
+
+
+        }
+        input[type=button], input[type=submit]:hover{
+            background-color: white;
+            color: #000;
+        }
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img
+                    src="https://innodatatics.ai/assets/innodatatics-white1.png">
+            </div>
+            <ul>
+                <li><a href="http://127.0.0.1:8000/Home">Home</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <form action="/Output" method="post">
+                <label for="Time Period"><h2>Select Time Period:</h2></label><br>
+                <h3><select name="Time Period" id="Time Period">
+                  <option value="4" >Quaterly (4 months)</option>
+                  <option value="6">Half Yealy (6 Months)</option>
+                  <option value="12">Yearly (12 Months)</option>
+                </select></h3>
+                <br><br>
+                <input type="submit" value="Forecast">
+              </form>
+              {{n}}
+          </div>
+
+    </header>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Century Gothic;
+        }
+
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.534), rgb(0, 0, 0)), url("https://wallpapercave.com/wp/wp3129753.jpg");
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .logo img {
+            float: left;
+            width: 160px;
+            height: auto;
+            padding: 25px
+        }
+
+        .main {
+            max-width: 1435px;
+            margin: auto;
+        }
+
+        ul {
+            float: right;
+            list-style-type: none;
+            margin-top: 25px;
+        }
+
+        ul li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 20px;
+            border: 1px solid transparent;
+            transition: 0.6s ease;
+        }
+
+        ul li a:hover {
+            background-color: white;
+            color: #000;
+        }
+
+        .table1 {
+            float: left;
+            position: absolute;
+            margin-top: 7%;
+            left: 7%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            background-color: white;
+        }
+
+        .table2 {
+            float: right;
+            position: absolute;
+            margin-top: 7%;
+            right: 7%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.288);
+            background-color: white;
+        }
+
+        .table1 td {
+            text-align: center;
+            padding: 3px;
+        }
+        .table1 th{
+            text-align: center;
+            padding: 3px;
+            border-bottom:1px dashed grey;
+        }
+        .table2 td {
+            text-align: center;
+            padding: 3px;
+        }
+        .table2 th {
+            text-align: center;
+            padding: 3px;
+            border-bottom:1px dashed grey;
+        }
+
+        .text {
+            position: absolute;
+            top: 80%;
+            left: 20%;
+        }
+        .text p {
+            color: white;
+            font-size: 20px;
+            border: 5px solid white;
+            padding: 10px
+        }
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Output</title>
+</head>
+
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img src="https://innodatatics.ai/assets/innodatatics-white1.png">
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/Predict">Predict</a></li>
+            </ul>
+        </div>
+        <div class="table1">
+            <h2 style="text-align:center">SGB Forecasting</h2>
+            {% for output_sgb in output_sgb %}
+            {{ output_sgb|safe }}
+            {% endfor %}
+
+        </div>
+        <div class="table2">
+            <h2 style="text-align:center">IRFC Bond Forecasting</h2>
+            {% for output_bond in output_bond %}
+            {{ output_bond|safe }}
+            {% endfor %}
+        </div>
+        <div class="text">
+            <p>{{text}}</p>
+        </div>
+    </header>
+</body>
+
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Century Gothic;
+        }
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://wallpapercave.com/wp/wp3129745.jpg");
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+        .logo img{
+            float: left;
+            width: 160px;
+            height: auto;
+            padding: 25px
+        }
+        .main {
+            max-width: 1435px;
+            margin: auto;
+        }
+        ul {
+            float: right;
+            list-style-type: none;
+            margin-top: 25px;
+        }
+
+        ul li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 20px;
+            border: 1px solid transparent;
+            transition: 0.6s ease;
+        }
+
+        ul li a:hover {
+            background-color: white;
+            color: #000;
+        }
+        .dropdown{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 5px solid white;
+            padding: 10px 30px;
+            color: white;
+            text-decoration: none;
+        }
+        input[type=button], input[type=submit]{
+            background-color: transparent ;
+            border: none solid transparent;
+            transition: 0.6s ease;
+            color: white;
+            padding: 16px 32px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+
+        }
+        input[type=button], input[type=submit]:hover{
+            background-color: white;
+            color: #000;
+        }
+        #submission{
+            text-align: center;
+        }
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict</title>
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img
+                    src="https://innodatatics.ai/assets/innodatatics-white1.png">
+            </div>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+        <div class="dropdown">
+            <form action="/Output" method="post">
+                <label for="Time Period"><h2 style="text-align: center;">Select Time Period to Forecast:</h2></label><br>
+                <h3 style="text-align: center;"> <select name="Time Period" id="Time Period">
+                  <option value="4" >Quaterly (4 months)</option>
+                  <option value="6">Half Yealy (6 Months)</option>
+                  <option value="12">Yearly (12 Months)</option>
+                </select></h3>
+                <br><br><br>
+                <p id="submission"><input type="submit" value="Forecast"></p>
+              </form>
+              {{n}}
+          </div>
+
+    </header>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Century Gothic;
+        }
+
+        header {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://storage.googleapis.com/kaggle-datasets-images/423609/807830/fc676eab839cc2a8134ac511f47e2c39/data-original.jpg?t=2019-11-22-17-04-44");
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        ul {
+            float: right;
+            list-style-type: none;
+            margin-top: 25px;
+        }
+
+        ul li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 20px;
+            border: 1px solid transparent;
+            transition: 0.6s ease;
+        }
+
+        ul li a:hover {
+            background-color: white;
+            color: #000;
+        }
+
+        .logo img {
+            float: left;
+            width: 160px;
+            height: auto;
+            padding: 25px
+        }
+
+        .main {
+            max-width: 1435px;
+            margin: auto;
+        }
+
+        ul li.active a {
+            background-color: white;
+            color: #000;
+        }
+
+        .title {
+            position: absolute;
+            top: 20%;
+            left: 5%;
+        }
+
+        .title h1 {
+            color: white;
+            font-size: 70px;
+            border: 5px solid white;
+            padding: 10px
+        }
+
+        .text {
+            position: absolute;
+            top: 60%;
+            left: 5%;
+        }
+
+        .text p {
+            color: white;
+            font-size: 20px;
+            border-left: 5px solid white;
+            padding: 10px
+        }
+
+        .button {
+            position: absolute;
+            top: 66%;
+            left: 70%;
+            transform: translate(-50%, -50%);
+        }
+
+        .btn {
+            border: 5px solid white;
+            padding: 10px 30px;
+            color: white;
+            text-decoration: none;
+            transition: 0.6s ease
+        }
+
+        .btn:hover {
+            background-color: white;
+            color: #000;
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonds Website</title>
+
+</head>
+
+<body>
+    <header>
+        <div class="main">
+            <div class="logo">
+                <img
+                    src="https://innodatatics.ai/assets/innodatatics-white1.png">
+            </div>
+            <ul>
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+        </div>
+        <div class="title">
+            <h1> We enable you to be<b>"INDEPENDENT"</b> <br>and not rely on money of others.</h1>
+        </div>
+        <div class="text">
+            <p> Make a smart decision by opting us. We forecast Bond Prices of SGB and<br>
+                IRFC Bond and compare their returns. Based on the current Prices in the market<br>
+                We will recommend you the better bond which will give you
+                good returns.</p>
+        </div>
+        <div class="button">
+            <a href="/Predict" class="btn">Proceed Here</a>
+        </div>
+    </header>
+
+</body>
+
+</html>
