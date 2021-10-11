@@ -37,7 +37,7 @@ We use auto_arima function to calculate p,d,q value. We use re(regex) to store t
 ### ARIMA
 This part is where the data is taken and then fit & predict.<br>
 This is for 12 months.
-![Actual Data vs Predicted Data](https://github.com/tuhinbasu/Project_Bonds/blob/main/img/actualvspred.PNG)
+![Actual Data vs Predicted Data](https://github.com/Chetan-Bangera/projsgbvsbond/blob/main/img/actualvspred.png)
 ### Model Evaluation
 #### SGB
 The RMSE: 93.27 Rs. & The MAPE: 0.0185
@@ -45,7 +45,7 @@ The RMSE: 93.27 Rs. & The MAPE: 0.0185
 The RMSE: 21.62 Rs. & The MAPE: 0.0139<br>
 (Pretty Good)
 ### Forecasting (12 Months)
-![Forecasted Data (12 Months)](https://github.com/tuhinbasu/Project_Bonds/blob/main/img/forecast.PNG)
+![Forecasted Data (12 Months)](https://github.com/Chetan-Bangera/projsgbvsbond/blob/main/img/forecast.png)
 ### Returns
 This is the part where both SGB and IRFC foecasted data is being collected and based on that returns are calculated. If the SGB returns is higher than IRFC bonds then it will tell the customer about the amount of return for a specific time period.
 ### User Input
@@ -55,7 +55,7 @@ The user will be given 3 options as Input. The user will select a specific time 
 3. 12 Months (Anually)<br>
 This options are time pperiod to forecast. If the user press 6 then the output page will show "6" forecasted values with a range Upper Price, Forecasted Price, Lower Price for both the bonds side by side. Below there will be a text where the returns will be diplayed if the user decides to sell the bonds then.<br>
 12 Months Forecasted Prices -
-![forecasted_prices](https://github.com/tuhinbasu/Project_Bonds/blob/main/img/forecastedprice.PNG)
+![forecasted_prices](https://github.com/Chetan-Bangera/projsgbvsbond/blob/main/img/forecastedprice.png)
 
 
 ## Python_code
@@ -329,12 +329,12 @@ def output_(x,y,t):
 output_(gain_sgb,gain_bond, n)
 ```
 ## Home Page (Used HTML and CSS)
-![home](https://github.com/tuhinbasu/Project_Bonds/blob/main/img/Home.png)
+![home](https://github.com/Chetan-Bangera/projsgbvsbond/blob/main/img/Home.png)
 
 ## Predict Page
-![predict](https://github.com/tuhinbasu/Project_Bonds/blob/main/img/input.png)
+![predict](https://github.com/Chetan-Bangera/projsgbvsbond/blob/main/img/input.png)
 
 ## Output Page
-![output](https://github.com/tuhinbasu/Project_Bonds/blob/main/img/output.png)
+![output](https://github.com/Chetan-Bangera/projsgbvsbond/blob/main/img/output.png)
 
 ### Project Completed --
